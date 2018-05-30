@@ -1,4 +1,5 @@
-const mysql = require('mysql');
+// Set up MySQL connection.
+const mysql = require("mysql");
 require('dotenv').config();
 
 //establish a pool connection
@@ -11,3 +12,15 @@ var pool = mysql.createPool({
 });
 
 module.exports = pool;
+
+// Make connection.
+// connection.connect(function(err) {
+//   if (err) {
+//     console.error("error connecting: " + err.stack);
+//     return;
+//   }
+//   console.log("connected as id " + connection.threadId);
+// });
+
+// // Export connection for our ORM to use.
+// module.exports = connection;
