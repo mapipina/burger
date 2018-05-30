@@ -11,36 +11,17 @@ var orm = {
     });
   },
   insertOne: function(tableInput, val, cb) {
-    connection.query('INSERT INTO'+tableInput+ "(burger_name) VALUES ("'+val+'");", function(err, result) {
+    connection.query('INSERT INTO'+tableInput+ "(burger_name) VALUES ('"+val+"');", function(err, result) {
       if (err)
         throw err;
       cb(result);
     });
   },
   updateOne: function(tableInput, condition, cb){
-    connection.query("UPDATE '+tableInput+' SET devoured=true WHERE id='+condition';", function (err, result) {
+    connection.query('UPDATE' +tableInput+ 'SET devoured=true WHERE id='+condition+';', function (err, result) {
       if (err) throw err
         cb(result);
       })
     }
   };
-  // updateOne: function(table, objColVals, condition, cb) {
-  //   var queryString = "UPDATE " + table;
-
-  //   queryString += " SET ";
-  //   queryString += objToSql(objColVals);
-  //   queryString += " WHERE ";
-  //   queryString += condition;
-
-  //   console.log(queryString);
-  //   connection.query(queryString, function(err, result) {
-  //     if (err) {
-  //       throw err;
-  //     }
-
-  //     cb(result);
-  //   });
-  // }
-
-
 module.exports = orm;
