@@ -1,6 +1,6 @@
 const express = require('express');
 const burger = require('../models/burger.js');
-const router = express.Router();
+var router = express.Router();
 
 router.get('/', function (req, res) {
 	burger.select(function(burger_data){
@@ -10,7 +10,7 @@ router.get('/', function (req, res) {
 	
 });
 
-router.put('/burgers/update', function(req,res){
+router.post('/burgers/update', function(req, res){
 	burger.update(req.body.burger_id, function(result){
 		console.log(result);
 		res.redirect('/');
