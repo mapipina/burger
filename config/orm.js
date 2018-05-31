@@ -1,7 +1,7 @@
-var connectionPool = require("./connection.js");
+var connection = require("./connection.js");
 
 var con = function(callback){
-    connectionPool.getConnection(function(err, connection) {
+    connection.getConnection(function(err, connection) {
          if (err){
             connection.release();
             throw (err);          
