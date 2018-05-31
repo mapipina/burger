@@ -1,9 +1,9 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const exphbs = require('express-handlebars');
+var express = require('express');
+var bodyParser = require('body-parser');
+var exphbs = require('express-handlebars');
 
 var PORT = process.env.PORT || 8080;
-const app = express();
+var app = express();
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({
