@@ -4,7 +4,7 @@ var con = function(callback){
     connectionPool.getConnection(function(err, connection) {
          if (err){
             // connection.release();
-            throw err;          
+            throw (err);          
         }
         callback(connection); 
     });

@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 const app = express();
 app.use(express.static("public"));
 
