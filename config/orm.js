@@ -1,14 +1,5 @@
 var connection = require("./connection.js");
 
-// var con = function(callback){
-//     connection.getConnection(function(err, connection) {
-//          if (err){
-//             connection.release();
-//             throw (err);          
-//         }
-//         callback(connection); 
-//     });
-// };
 
 var orm = {
   selectAll: function(tableInput, cb) {
