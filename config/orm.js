@@ -3,7 +3,7 @@ var connectionPool = require("./connection.js");
 var con = function(callback){
     connectionPool.getConnection(function(err, connection) {
          if (err){
-            // connection.release();
+            connection.release();
             throw (err);          
         }
         callback(connection); 
@@ -15,7 +15,7 @@ var orm = {
     var queryString = "SELECT * FROM " + tableInput + ";";
     con(connection=>{connection.query(queryString, function(err, result) {
               if (err) throw err;
-              // connection.release();
+              connection.release();
               cb(result);
             });
       })
