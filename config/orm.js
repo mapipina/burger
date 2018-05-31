@@ -1,4 +1,4 @@
-var connection = require("./connection.js");
+var connectionPool = require("./connection.js");
 
 var con = function(callback){
     connectionPool.getConnection(function(err, connection) {
