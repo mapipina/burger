@@ -13,12 +13,11 @@ var connection = require("./connection.js");
 var orm = {
   selectAll: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
-    con(connection=>{connection.query(queryString, function(err, result) {
+    connection.query(queryString, function(err, result) {
               if (err) throw err;
               connection.release();
               cb(result);
             });
-      });
   }
   // insertOne: function(tableInput, val, cb) {
   //   connection.query('INSERT INTO '+tableInput+ " (burger_name) VALUES ('"+val+"');", function(err, result) {
