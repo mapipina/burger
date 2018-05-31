@@ -1,4 +1,5 @@
 USE heroku_e0fe6548ff59ee9;
+-- USE burgers_db;
 
 DROP TABLE IF EXISTS burgers;
 CREATE TABLE burgers
