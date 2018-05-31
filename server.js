@@ -7,7 +7,7 @@ const app = express();
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({
-	extended: false
+	extended: true
 }));
 
 app.use(bodyParser.json());
