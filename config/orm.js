@@ -4,7 +4,7 @@ var orm = {
   selectAll: pool.getConnection(function(err, connection) {
   // Use the connection
     var queryString = "SELECT * FROM " + tableInput + ";";
-    connection.query(queryString, function (error, results, fields) {
+    connection.query(queryString, function (error, results) {
       console.log(results);
       // And done with the connection.
       connection.release();
