@@ -6,13 +6,13 @@ var burger = {
       cb(res);
     });
   }
-  ,
-  insert: function(name, cb) {
-    orm.insertOne("burgers", name, cb);
-  },
-  update: function(id, cb) {
-    orm.updateOne("burgers", id, cb);
-  }
+  // ,
+  // insert: function(name, cb) {
+  //   orm.insertOne("burgers", name, cb);
+  // },
+  // update: function(id, cb) {
+  //   orm.updateOne("burgers", id, cb);
+  // }
 };
 
 // Export the database functions for the controller
