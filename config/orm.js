@@ -1,18 +1,22 @@
 var pool = require("./connection.js");
 
 var orm = {
-  selectAll: pool.getConnection(function(err, connection) {
-  // Use the connection
-    var queryString = "SELECT * FROM " + tableInput + ";";
-    connection.query(queryString, function (error, results) {
-      console.log(results);
-      // And done with the connection.
-      connection.release();
-      // Handle error after the release.
-      if (error) throw error;
-      // Don't use the connection here, it has been returned to the pool.
-    });
-  })
+  selectAll: function(tableInput, cb){
+      pool.getConnection(function(err, connection) {
+    // Use the connection
+      var queryString = "SELECT * FROM " + tableInput + ";";
+      connection.query(queryString, function (error, results) {
+        cb(results);
+        // And done with the connection.
+        connection.release();
+        // Handle error after the release.
+        if (error) throw error;
+        // Don't use the connection here, it has been returned to the pool.
+      });
+    })
+  }
+
+
 
 }
 
